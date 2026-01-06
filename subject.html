@@ -1,0 +1,536 @@
+<!DOCTYPE Learning>
+<Learning lang="ko">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bookmark Manager</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                background-color: #f4f7f6;
+                color: #333;
+            }
+
+            .container {
+                display: flex;
+            }
+
+            aside {
+                width: 260px;
+                background-color: #fff;
+                border-right: 1px solid #ddd;
+                padding: 20px;
+            }
+
+            aside h2 {
+                font-size: 20px;
+                margin-bottom: 30px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .tags {
+                padding: 10px;
+            }
+
+            .tag {
+                display: flex;
+                align-items: center;
+                height: 40px;
+                justify-content: space-between;
+            }
+
+            .tag-num {
+                width: 24px;
+                height: 24px;
+                background-color: #004d40;
+                color: white;
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 14px;
+            }
+
+            .tag-input {
+                display: flex;
+                gap: 10px;
+                font-size: 14px;
+            }
+
+            main {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            header {
+                height: 70px;
+                background-color: #fff;
+                border-bottom: 1px solid #ddd;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 30px;
+            }
+
+            .search-bar {
+                width: 400px;
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+
+            .btn-add {
+                background-color: #004d40;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                font-weight: bold;
+                margin-left: 100vh;
+            }
+
+            section {
+                padding: 30px;
+            }
+
+            .section-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+
+            
+
+            .item-list {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+                gap: 25px;
+                margin-top: 20px;
+            }
+
+            .item {
+                background-color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 12px;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .card-top {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .site-info h3 {
+                font-size: 18px;
+            }
+
+            .site-info p {
+                font-size: 12px;
+                color: #888;
+            }
+
+            .description {
+                border-top: 1px solid #ddd;
+                padding-top: 15px;
+                font-size: 14px;
+                color: #666;
+                line-height: 1.4;
+            }
+
+            .item-tags {
+                display: flex;
+                gap: 5px;
+            }
+
+            .item-tag {
+                background-color: #f0f0f0;
+                padding: 4px 8px;
+                border-radius: 4px;
+                font-size: 12px;
+                color: #555;
+            }
+
+            .card-footer {
+                display: flex;
+                margin-top: auto;
+                padding-top: 15px;
+                border-top: 1px solid #eee;
+                font-size: 12px;
+                color: #999;
+                gap: 15px;
+            }
+
+            .more-options {
+                width: 30px;
+                text-align: center;
+                height: 30px;
+                border: 1px solid #ababab;
+                border-radius: 8px;
+            }
+
+            ul li span {
+                border: 1px solid #000;
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <aside>
+                <h2>🎚 Bookmark Manager</h2>
+                <p style="color: #666; font-size: 18px; margin-bottom: 10px;">🏠 Home</p>
+                <p style="color: #666; font-size: 18px;">📁 Archived</p>
+                <div class="tags">
+                    <p>TAGS</p>
+                    <div class="tag">
+                        <div class="tag-input">
+                            <input type="checkbox" id="ai">
+                            <label for="ai">AI</label>
+                        </div>
+                        <div class="tag-num">1</div>
+                    </div>
+                    <div class="tag">
+                        <div class="tag-input">
+                            <input type="checkbox" id="community">
+                            <label for="community">Community</label>
+                        </div>
+                        <div class="tag-num">5</div>
+                    </div>
+                    <div class="tag">
+                        <div class="tag-input">
+                            <input type="checkbox" id="compatibility">
+                            <label for="compatibility">Compatibility</label>
+                        </div>
+                        <div class="tag-num">1</div>
+                    </div>
+                    <div class="tag">
+                        <div class="tag-input">
+                            <input type="checkbox" id="css">
+                            <label for="css">CSS</label>
+                        </div>
+                        <div class="tag-num">6</div>
+                    </div>
+                    <div class="tag">
+                        <div class="tag-input">
+                            <input type="checkbox" id="design">
+                            <label for="design">Design</label>
+                        </div>
+                        <div class="tag-num">1</div>
+                    </div>
+                    <div class="tag">
+                        <div class="tag-input">
+                            <input type="checkbox" id="framework">
+                            <label for="framework">Framework</label>
+                        </div>
+                        <div class="tag-num">2</div>
+                    </div>
+                    <div class="tag">
+                        <div class="tag-input">
+                            <input type="checkbox" id="git">
+                            <label for="git">git</label>
+                        </div>
+                        <div class="tag-num">1</div>
+                    </div>
+                    <div class="tag">
+                        <div class="tag-input">
+                            <input type="checkbox" id="html">
+                            <label for="html">HTML</label>
+                        </div>
+                        <div class="tag-num">2</div>
+                    </div>
+                    <div class="tag">
+                        <div class="tag-input">
+                            <input type="checkbox" id="javascript">
+                            <label for="javascript">JavaScript</label>
+                        </div>
+                        <div class="tag-num">3</div>
+                    </div>
+                    <div class="tag">
+                        <div class="tag-input">
+                            <input type="checkbox" id="layout">
+                            <label for="layout">Layout</label>
+                        </div>
+                        <div class="tag-num">3</div>
+                    </div>
+                    <div class="tag">
+                        <div class="tag-input">
+                            <input type="checkbox" id="learning">
+                            <label for="learning">Learning</label>
+                        </div>
+                        <div class="tag-num">6</div>
+                    </div>
+                    <div class="tag">
+                        <div class="tag-input">
+                            <input type="checkbox" id="performance">
+                            <label for="performance">Performance</label>
+                        </div>
+                        <div class="tag-num">2</div>
+                    </div>
+                    <div class="tag">
+                        <div class="tag-input">
+                            <input type="checkbox" id="practice">
+                            <label for="practice">Practice</label>
+                        </div>
+                        <div class="tag-num">5</div>
+                    </div>
+                    <div class="tag">
+                        <div class="tag-input">
+                            <input type="checkbox" id="reference">
+                            <label for="reference">Reference</label>
+                        </div>
+                        <div class="tag-num">4</div>
+                    </div>
+                    <div class="tag">
+                        <div class="tag-input">
+                            <input type="checkbox" id="tips">
+                            <label for="tips">Tips</label>
+                        </div>
+                        <div class="tag-num">4</div>
+                    </div>
+                    <div class="tag">
+                        <div class="tag-input">
+                            <input type="checkbox" id="tools">
+                            <label for="tools">Tools</label>
+                        </div>
+                        <div class="tag-num">4</div>
+                    </div>
+                    <div class="tag">
+                        <div class="tag-input">
+                            <input type="checkbox" id="tutorial">
+                            <label for="tutorial">Tutorial</label>
+                        </div>
+                        <div class="tag-num">3</div>
+                    </div>
+                </div>
+            </aside>
+
+            <main>
+                <header>
+                    <input type="text" class="search-bar" placeholder="🍳 Search by title...">
+                    <button class="btn-add">+ Add Bookmark</button>
+                    <div
+                        style="border-radius: 50%; width: 35px; height: 35px; background: #eee; border: 1px solid #000;">
+                    </div>
+                </header>
+
+                <section>
+                    <div class="section-header">
+                        <h2>All bookmarks</h2>
+                        <button
+                            style="padding: 5px 10px; background: white; border: 1px solid #ddd; border-radius: 4px;">⇅
+                            Sort by</button>
+                    </div>
+
+                    <div class="item-list">
+                        <div class="item">
+                            <div class="card-top">
+                                <div class="site-info">
+                                    <h3>Frontend Mentor</h3>
+                                    <p>frontendmentor.io</p>
+                                </div>
+                                <span class="more-options">⋮</span>
+                            </div>
+                            <p class="description">Improve your front-end coding skills by building real projects. Solve real-world HTML, CSS and JavaScript challenges whilst working to professional designs.</p>
+                            <div class="item-tags">
+                                <span class="item-tag">Practice</span>
+                                <span class="item-tag">Learning</span>
+                                <span class="item-tag">Community</span>
+                            </div>
+                            <div class="card-footer">
+                                <span>👁️ 47</span>
+                                <span>🧭 15 Jan</span>
+                                <span>📅 23 Sep</span>
+                                <span style="margin-left:auto;">🧷</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card-top">
+                                <div class="site-info">
+                                    <h3>MDN Web Docs</h3>
+                                    <p>developer.mozilla.org</p>
+                                </div>
+                                <span class="more-options">⋮</span>
+                            </div>
+                            <p class="description">The MDN Web Docs site provides information about Open Web technologies including HTML, CSS, and APIs for both Web sites and progressive web apps.</p>
+                            <div class="item-tags">
+                                <span class="item-tag">Practice</span>
+                                <span class="item-tag">Learning</span>
+                            </div>
+                            <div class="card-footer">
+                                <span>👁️ 47</span>
+                                <span>🧭 15 Jan</span>
+                                <span>📅 23 Sep</span>
+                                <span style="margin-left:auto;">🧷</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card-top">
+                                <div class="site-info">
+                                    <h3>React Docs</h3>
+                                    <p>react.dev</p>
+                                </div>
+                                <span class="more-options">⋮</span>
+                            </div>
+                            <p class="description">The library for web and native user interfaces. Build user interfaces out of individual pieces called components.</p>
+                            <div class="item-tags">
+                                <span class="item-tag">Practice</span>
+                                <span class="item-tag">Learning</span>
+                            </div>
+                            <div class="card-footer">
+                                <span>👁️ 47</span>
+                                <span>🧭 15 Jan</span>
+                                <span>📅 23 Sep</span>
+                                <span style="margin-left:auto;">🧷</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-list">
+                        <div class="item">
+                            <div class="card-top">
+                                <div class="site-info">
+                                    <h3>Claude</h3>
+                                    <p>claude.ai</p>
+                                </div>
+                                <span class="more-options">⋮</span>
+                            </div>
+                            <p class="description">An Al assistant created by Anthropic that can help with analysis, writing, coding, math, and creative tasks through natural conversation.</p>
+                            <div class="item-tags">
+                                <span class="item-tag">Practice</span>
+                                <span class="item-tag">Learning</span>
+                            </div>
+                            <div class="card-footer">
+                                <span>👁️ 47</span>
+                                <span>🧭 15 Jan</span>
+                                <span>📅 23 Sep</span>
+                                <span style="margin-left:auto;">🧷</span>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="card-top">
+                                <div class="site-info">
+                                    <h3>Web.dev</h3>
+                                    <p>web.dev</p>
+                                </div>
+                                <span class="more-options">⋮</span>
+                            </div>
+                            <p class="description">Guidance to build modern web experiences that work on any browser. Learn about web vitals, PWAS, and more.</p>
+                            <div class="item-tags">
+                                <span class="item-tag">Practice</span>
+                                <span class="item-tag">Learning</span>
+                            </div>
+                            <div class="card-footer">
+                                <span>👁️ 47</span>
+                                <span>🧭 15 Jan</span>
+                                <span>📅 23 Sep</span>
+                                <span style="margin-left:auto;">🧷</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card-top">
+                                <div class="site-info">
+                                    <h3>Tailwind</h3>
+                                    <p>tailwindcss.com</p>
+                                </div>
+                                <span class="more-options">⋮</span>
+                            </div>
+                            <p class="description">A utility-first CSS framework for rapidly building modern websites without ever leaving your HTML.</p>
+                            <div class="item-tags">
+                                <span class="item-tag">Practice</span>
+                                <span class="item-tag">Learning</span>
+                            </div>
+                            <div class="card-footer">
+                                <span>👁️ 47</span>
+                                <span>🧭 15 Jan</span>
+                                <span>📅 23 Sep</span>
+                                <span style="margin-left:auto;">🧷</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-list">
+                        <div class="item">
+                            <div class="card-top">
+                                <div class="site-info">
+                                    <h3>Dev.to</h3>
+                                    <p>dev.to</p>
+                                </div>
+                                <span class="more-options">⋮</span>
+                            </div>
+                            <p class="description">A constructive and inclusive social network for software developers. Share knowledge and grow your career.</p>
+                            <div class="item-tags">
+                                <span class="item-tag">Practice</span>
+                                <span class="item-tag">Learning</span>
+                            </div>
+                            <div class="card-footer">
+                                <span>👁️ 47</span>
+                                <span>🧭 15 Jan</span>
+                                <span>📅 23 Sep</span>
+                                <span style="margin-left:auto;">🧷</span>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <div class="card-top">
+                                <div class="site-info">
+                                    <h3>JavaScript.info</h3>
+                                    <p>javascript.info</p>
+                                </div>
+                                <span class="more-options">⋮</span>
+                            </div>
+                            <p class="description">The Modern JavaScript Tutorial. How it's done now. From the basics to advanced topics with simple, but detailed explanations.</p>
+                            <div class="item-tags">
+                                <span class="item-tag">JavaScript</span>
+                                <span class="item-tag">Framework</span>
+                                <span class="item-tag">Reference</span>
+                            </div>
+                            <div class="card-footer">
+                                <span>👁️ 47</span>
+                                <span>🧭 15 Jan</span>
+                                <span>📅 23 Sep</span>
+                                <span style="margin-left:auto;">🧷</span>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="card-top">
+                                <div class="site-info">
+                                    <h3>freeCodeCamp</h3>
+                                    <p>freecodecamp.org</p>
+                                </div>
+                                <span class="more-options">⋮</span>
+                            </div>
+                            <p class="description">Learn to code for free. Build projects. Earn certifications. An open source community that helps you learn to code with free online courses and certifications.</p>
+                            <div class="item-tags">
+                                <span class="item-tag">Practice</span>
+                                <span class="item-tag">Framework</span>
+                                <span class="item-tag">Reference</span>
+                            </div>
+                            <div class="card-footer">
+                                <span>👁️ 47</span>
+                                <span>🧭 15 Jan</span>
+                                <span>📅 23 Sep</span>
+                                <span style="margin-left:auto;">🧷</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </body>
+
+</Learning>
