@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desserts Menu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fcf8f5;
+            padding: 50px;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+
+        .menu-section {
+            flex: 3;
+        }
+
+        .title {
+            font-size: 40px;
+            color: #3e1f14;
+            margin-bottom: 30px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .product-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .image-container {
+            position: relative;
+            margin-bottom: 35px;
+        }
+
+        .image-container img {
+            border: 1px solid #ddd;
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .add-btn {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            border: 1px solid #000;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .category {
+            font-size: 14px;
+            color: #8b8b8b;
+            margin-top: 5px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            color: #000000;
+            margin: 5px 0;
+        }
+
+        .price {
+            font-size: 18px;
+            color: rgb(138, 0, 0);
+            font-weight: bold;
+        }
+
+        .cart-section {
+            flex: 1;
+        }
+
+        .cart-container {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .cart-title {
+            color: rgb(138, 0, 0);
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .cart-empty img {
+            width: 120px;
+            height: 100px;
+            margin-bottom: 15px;
+        }
+
+        .cart-empty p {
+            color: #836158;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <main class="menu-section">
+            <h1 class="title">Desserts</h1>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="./img/Baklava.jpg" alt="Baklava">
+                        <button class="add-btn">🛒 Add to Cart</button>
+                    </div>
+                    <p class="category">Waffle</p>
+                    <h3 class="product-name">Waffle with Berries</h3>
+                    <p class="price">$6.50</p>
+                </div>
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="./img/Baklava.jpg" alt="Baklava">
+                        <button class="add-btn">🛒 Add to Cart</button>
+                    </div>
+                    <p class="category">Waffle</p>
+                    <h3 class="product-name">Waffle with Berries</h3>
+                    <p class="price">$6.50</p>
+                </div>
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="./img/Baklava.jpg" alt="Baklava">
+                        <button class="add-btn">🛒 Add to Cart</button>
+                    </div>
+                    <p class="category">Waffle</p>
+                    <h3 class="product-name">Waffle with Berries</h3>
+                    <p class="price">$6.50</p>
+                </div>
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="./img/Baklava.jpg" alt="Baklava">
+                        <button class="add-btn">🛒 Add to Cart</button>
+                    </div>
+                    <p class="category">Waffle</p>
+                    <h3 class="product-name">Waffle with Berries</h3>
+                    <p class="price">$6.50</p>
+                </div>
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="./img/Baklava.jpg" alt="Baklava">
+                        <button class="add-btn">🛒 Add to Cart</button>
+                    </div>
+                    <p class="category">Waffle</p>
+                    <h3 class="product-name">Waffle with Berries</h3>
+                    <p class="price">$6.50</p>
+                </div>
+                <div class="product-card">
+                    <div class="image-container">
+                        <img src="./img/Baklava.jpg" alt="Baklava">
+                        <button class="add-btn">🛒 Add to Cart</button>
+                    </div>
+                    <p class="category">Waffle</p>
+                    <h3 class="product-name">Waffle with Berries</h3>
+                    <p class="price">$6.50</p>
+                </div>
+            </div>
+        </main>
+
+        <aside class="cart-section">
+            <div class="cart-container">
+                <h2 class="cart-title">Your Cart (0)</h2>
+                <div class="cart-empty">
+                    <img src="./img/image.png" alt="Empty Cart">
+                    <p>Your added items will appear here</p>
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
+
+</html>
