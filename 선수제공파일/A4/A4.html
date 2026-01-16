@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin: 0 auto;
+            transform: translateY(100%);
+            width: 350px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        input {
+            margin: auto;
+            width: 250px;
+            height: 40px;
+            border: 1px solid #aaaaaa;
+            border-radius: 7px;
+            padding: 15px;
+        }
+
+        input[type="submit"] {
+            height: 60px;
+            background-color: #838383;
+            color: white;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #3b3b3b;
+            transition: 0.3s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="">
+            <input type="text" id="username" name="username" placeholder="이름 입력" required>
+            <input type="email" id="email" name="email" placeholder="email 입력" required>
+            <input type="password" id="password" name="password" placeholder="비밀번호 입력" required>
+            <input type="password" id="password" name="password" placeholder="비밀번호 확인" required>
+
+            <input type="submit" value="회원가입">
+        </form>
+    </div>
+</body>
+</html>
