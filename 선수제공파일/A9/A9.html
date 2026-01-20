@@ -1,13 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-    <div class="conatiner">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url(./images/background.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        h4 {
+            margin-top: 40px;
+        }
+
+        .slider {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+            position: relative;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        .slides {
+            display: flex;
+            width: 1800px;
+            transition: transform 0.5s ease;
+        }
+
+        .slide {
+            width: 100%;
+            height: 200px;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 24px;
+            color: white;
+        }
+
+        .picture img {
+            width: 500px;
+            height: auto;
+
+        }
+
+        .s1 {
+        }
+
+        .s2 {
+        }
+
+        .s3 {
+        }
+
+        #slide1:checked~.slides {
+            transform: translateX(0%);
+        }
+
+        #slide2:checked~.slides {
+            transform: translateX(-100%);
+        }
+
+        #slide3:checked~.slides {
+            transform: translateX(-200%);
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
         
+        .controls label {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            display: inline-block;
+            margin: 0 10px;
+            color: white;
+            border: 1px solid #fff;
+        }
+
+        .controls label:hover {
+            background: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <input type="radio" name="slide" id="slide1" checked>
+        <input type="radio" name="slide" id="slide2">
+        <input type="radio" name="slide" id="slide3">
+
+        <div class="slides">
+            <div class="slide s1">
+                <div class="picture">
+                    <img src="./images/1.jpg">
+                    <div class="desc">
+                        <div><h4>삼나무와 초록 밀밭</h4></div>
+                        <div><i>Cypresses and Green Wheat Field</i></div>
+                        <div>Vincent van Gogh, 1889</div>
+                    </div>
+                </div>
+                <div class="picture">
+                    <img src="./images/2.jpg">
+                    <div class="desc">
+                        <div><h4>삼나무와 초록 밀밭</h4></div>
+                        <div><i>Cypresses and Green Wheat Field</i></div>
+                        <div>Vincent van Gogh, 1889</div>
+                    </div>
+                </div>
+                <div class="picture">
+                    <img src="./images/3.jpg">
+                    <div class="desc">
+                        <div><h4>삼나무와 초록 밀밭</h4></div>
+                        <div><i>Cypresses and Green Wheat Field</i></div>
+                        <div>Vincent van Gogh, 1889</div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="slide s2">
+                <div class="picture">
+                    <img src="./images/4.jpg">
+                    <div class="desc">
+                        <div><h4>삼나무와 초록 밀밭</h4></div>
+                        <div><i>Cypresses and Green Wheat Field</i></div>
+                        <div>Vincent van Gogh, 1889</div>
+                    </div>
+                </div>
+                <div class="picture">
+                    <img src="./images/5.jpg">
+                    <div class="desc">
+                        <div><h4>삼나무와 초록 밀밭</h4></div>
+                        <div><i>Cypresses and Green Wheat Field</i></div>
+                        <div>Vincent van Gogh, 1889</div>
+                    </div>
+                </div>
+                <div class="picture">
+                    <img src="./images/6.jpg">
+                    <div class="desc">
+                        <div><h4>삼나무와 초록 밀밭</h4></div>
+                        <div><i>Cypresses and Green Wheat Field</i></div>
+                        <div>Vincent van Gogh, 1889</div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide s3"><div class="picture">
+                    <img src="./images/7.jpg">
+                    <div class="desc">
+                        <div><h4>삼나무와 초록 밀밭</h4></div>
+                        <div><i>Cypresses and Green Wheat Field</i></div>
+                        <div>Vincent van Gogh, 1889</div>
+                    </div>
+                </div>
+                <div class="picture">
+                    <img src="./images/8.jpg">
+                    <div class="desc">
+                        <div><h4>삼나무와 초록 밀밭</h4></div>
+                        <div><i>Cypresses and Green Wheat Field</i></div>
+                        <div>Vincent van Gogh, 1889</div>
+                    </div>
+                </div>
+                <div class="picture">
+                    <img src="./images/9.jpg">
+                    <div class="desc">
+                        <div><h4>삼나무와 초록 밀밭</h4></div>
+                        <div><i>Cypresses and Green Wheat Field</i></div>
+                        <div>Vincent van Gogh, 1889</div>
+                    </div>
+                </div> -->
+        </div>
+
+        <div class="controls btn1">
+            <label for="slide1">&lt;</label>
+            <label for="slide2">&gt;</label>
+        </div>
+        <div class="controls btn2">
+            <label for="slide1">&lt;</label>
+            <label for="slide3">&gt;</label>
+        </div>
+        <div class="controls btn3">
+            <label for="slide2">&lt;</label>
+            <label for="slide3">&gt;</label>
+        </div>
     </div>
+
 </body>
+
 </html>
