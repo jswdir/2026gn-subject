@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -24,7 +24,7 @@
             width: 100%;
             height: 100vh;
             overflow: hidden;
-            background-image: url("images/background.png");
+            background-image: url("./images/background.png");
             background-size: cover;
             background-position: center;
             display: flex;
@@ -35,13 +35,13 @@
             gap: 120px;
         }
 
-        .picture-area {
+        .item-area {
             width: 300%;
             display: flex;
             transition: transform 0.6s ease;
         }
 
-        .picture-slide {
+        .item-slide {
             width: 100vw;
             display: flex;
             justify-content: center;
@@ -49,13 +49,13 @@
             gap: 80px;
         }
 
-        .picture {
+        .item {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
 
-        .picture img {
+        .item img {
             width: 320px;
             height: auto;
         }
@@ -88,23 +88,18 @@
             padding: 10px 20px;
             color: #fff;
             border: 1px solid #fff;
-            cursor: pointer;
         }
 
-        .btn:active {
-            background-color: #e2e2e2;
+        #s1:checked~.slider-wrapper .item-area {
+            transform: translateX(33%);
         }
 
-        #s1:checked~.slider-wrapper .picture-area {
-            transform: translateX(33.3333%);
-        }
-
-        #s2:checked~.slider-wrapper .picture-area {
+        #s2:checked~.slider-wrapper .item-area {
             transform: translateX(0);
         }
 
-        #s3:checked~.slider-wrapper .picture-area {
-            transform: translateX(-33.333%);
+        #s3:checked~.slider-wrapper .item-area {
+            transform: translateX(-33%);
         }
 
         #s1:checked~.slider-wrapper .btn-area .slide1,
@@ -123,9 +118,9 @@
 
     <div class="slider-wrapper">
 
-        <div class="picture-area">
-            <div class="picture-slide slide1">
-                <div class="picture">
+        <div class="item-area">
+            <div class="item-slide">
+                <div class="item">
                     <img src="./images/1.jpg">
                     <div class="desc">
                         <div>삼나무와 초록 밀밭</div>
@@ -133,7 +128,7 @@
                         <div>Vincent van Gogh, 1889</div>
                     </div>
                 </div>
-                <div class="picture">
+                <div class="item">
                     <img src="./images/2.jpg">
                     <div class="desc">
                         <div>모델과 화가</div>
@@ -141,7 +136,7 @@
                         <div>Pablo Picasso, 1928</div>
                     </div>
                 </div>
-                <div class="picture">
+                <div class="item">
                     <img src="./images/3.jpg">
                     <div class="desc">
                         <div>작은 거리</div>
@@ -151,8 +146,8 @@
                 </div>
             </div>
 
-            <div class="picture-slide slide2">
-                <div class="picture">
+            <div class="item-slide">
+                <div class="item">
                     <img src="./images/4.jpg">
                     <div class="desc">
                         <div>빈도 알토비티의 초상</div>
@@ -160,7 +155,7 @@
                         <div>Raphael, 1515</div>
                     </div>
                 </div>
-                <div class="picture">
+                <div class="item">
                     <img src="./images/5.jpg">
                     <div class="desc">
                         <div>나르시스의 변형</div>
@@ -168,7 +163,7 @@
                         <div>Salvador Dalí, 1937</div>
                     </div>
                 </div>
-                <div class="picture">
+                <div class="item">
                     <img src="./images/6.jpg">
                     <div class="desc">
                         <div>베노아의 성모</div>
@@ -178,8 +173,8 @@
                 </div>
             </div>
 
-            <div class="picture-slide slide3">
-                <div class="picture">
+            <div class="item-slide">
+                <div class="item">
                     <img src="./images/7.jpg">
                     <div class="desc">
                         <div>과일 바구니를 든 소년</div>
@@ -187,7 +182,7 @@
                         <div>Caravaggio, 1593–1594</div>
                     </div>
                 </div>
-                <div class="picture">
+                <div class="item">
                     <img src="./images/8.jpg">
                     <div class="desc">
                         <div>들쥐</div>
@@ -195,7 +190,7 @@
                         <div>Albrecht Dürer, 1502</div>
                     </div>
                 </div>
-                <div class="picture">
+                <div class="item">
                     <img src="./images/9.jpg">
                     <div class="desc">
                         <div>톨레도 풍경</div>
