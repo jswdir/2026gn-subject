@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .stepper-box {
+            display: flex;
+            width: 900px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #cecece;
+        }
+
+        .step {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            border-bottom: 6px solid #fff;
+        }
+
+        .step-idx {
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+
+        .content b {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .content p {
+            margin: 0;
+            font-size: 13px;
+        }
+
+        .step.completed {
+            color: green;
+            border-bottom-color: green;
+            background-color: lightgreen;
+        }
+
+        .step.completed .step-idx {
+            color: green;
+            opacity: 1;
+        }
+
+        .step.completed p {
+            color: green;
+            font-weight: bold;
+        }
+
+        .step.progress {
+            background-color: lightblue;
+            color: blue;
+            border-bottom-color: blue;
+        }
+
+        .step.pending {
+            color: skyblue;
+            border-bottom-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="stepper-box">
+        <div class="step completed">
+            <span class="step-idx">01</span>
+            <div class="content">
+                <b>Card Details</b>
+                <p>Completed</p>
+            </div>
+        </div>
+        <div class="step progress">
+            <span class="step-idx">02</span>
+            <div class="content">
+                <b>Form Review</b>
+                <p>In Progress</p>
+            </div>
+        </div>
+        <div class="step pending">
+            <span class="step-idx">03</span>
+            <div class="content">
+                <b>Authentication</b>
+                <p>Pending</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

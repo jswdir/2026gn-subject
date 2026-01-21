@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 8px;
+        }
+
+        .item img {
+            width: 80%;
+            height: auto;
+        }
+
+        .item button {
+            padding: 5px 10px;
+        }
+
+        @media screen and (max-width: 1023px) {
+            .item-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .item-list {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="item-list">
+        <div class="item">
+            <img src="./card1.jpg" alt="card1-img">
+            <p>이미지 샘플카드</p>
+            <button>더보기</button>
+        </div>
+        <div class="item">
+            <img src="./card2.jpg" alt="card2-img">
+            <p>이미지 샘플카드</p>
+            <button>더보기</button>
+        </div>
+        <div class="item">
+            <img src="./card3.jpg" alt="card3-img">
+            <p>이미지 샘플카드</p>
+            <button>더보기</button>
+        </div>
+        <div class="item">
+            <img src="./card4.jpg" alt="card4-img">
+            <p>이미지 샘플카드</p>
+            <button>더보기</button>
+        </div>
+    </div>
+</body>
+</html>
