@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .nav-bgc {
+            position: absolute;
+            background-color: black;
+            height: 40px;
+            width: 100%;
+            z-index: -1000;
+            overflow: hidden;
+        }
+        
+        .container {
+            border: 1px solid #000;
+            width: 1280px;
+            margin: 0 auto;
+            height: 100vh;
+        }
+        
+        .nav {
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: lighter;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="nav-bgc"></div>
+    <div class="container">
+        <div class="nav">
+            <div class="nav-left">
+                <span>아이스크림</span>
+                <span>교과서</span>
+                <span>연수원</span>
+                <span>쌤튜브</span>
+                <span>아이스크림몰</span>
+                <span>하이클래스</span>
+                <span>띵커벨</span>
+                <span>클래스툴</span>
+            </div>
+            <div class="nav-right">
+                <span>로그인</span>
+                <span>고객센터</span>
+            </div>
+        </div>
+        <header>
+            <div class="logo"></div>
+            <div class="search-bar">
+                <input type="text" placeholder="검색어를 입력해 주세요.">
+                <button>검색</button>
+            </div>
+            <div class="user-actions">
+                <div class="cart-icon"></div>
+                <div class="login-icon"></div>
+            </div>
+        </header>
+        <div class="menu"></div>
+        <div class="slide"></div>
+        <div class="other-content">
+            <div class="other-content-menu">
+                <button>BEST</button>
+                <button>겨울 핫템</button>
+                <button>난방용품</button>
+                <button>학습 효율 UP!</button>
+            </div>
+            <div class="content-section"></div>
+        </div>
+    </div>
+</body>
+</html>
