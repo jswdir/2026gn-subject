@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.nav-bgc {
+    position: absolute;
+    background-color: black;
+    height: 40px;
+    width: 100%;
+    z-index: -1000;
+    overflow: hidden;
+}
+
+.container {
+    border: 1px solid #000;
+    width: 1280px;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+/* navigation */
+.nav {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: lighter;
+}
+
+.nav-left span {
+    margin-right: 20px;
+}
+
+.nav-right span {
+    margin-left: 20px;
+}
+
+/* header */
+header {
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.logo {
+    width: 100px;
+    height: 50px;
+    background-color: #a5a5a5;
+}
+
+.search-bar {
+    position: relative;
+    padding-left: 40px;
+}
+
+.search-bar input {
+    width: 400px;
+    height: 30px;
+    border: none;
+    border-radius: 35px;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.search-bar button {
+    background-color: #f5f5f5;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 60px;
+    height: 30px;
+    border: none;
+    background-color: none;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 20px;
+}
+
+.delivery-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #a5a5a5;
+}
+
+.cart-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #a5a5a5;
+}
+
+.login-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #a5a5a5;
+}
+
